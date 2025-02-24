@@ -1,46 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChatDoc - Chat with Your Data</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-    nav { background-color: #1a237e; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-    nav .logo { font-size: 1.8rem; font-weight: bold; }
-    nav .menu { display: flex; }
-    nav .menu a { display: block; }
-    nav .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
-    header { background-color: #3f51b5; color: #fff; padding: 4rem 2rem; text-align: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
-    header h1 { font-size: 2.8rem; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; }
-    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
-    .features, .about, .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
-    .feature, .about-item, .contact-item { padding: 2rem; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #f9f9f9; }
-    .feature i, .about-item i, .contact-item i { font-size: 3rem; color: #3f51b5; margin-bottom: 1rem; }
-    .feature h3, .about-item h3, .contact-item h3 { font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: bold; }
-    .pricing { text-align: center; background-color: #f0f0f0; padding: 4rem 2rem; border-radius: 30px; }
-    .pricing h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: bold; }
-    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .plan { background-color: #fff; padding: 2rem; border-radius: 20px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border: 2px solid #3f51b5; }
-    .plan h3 { font-size: 1.6rem; margin-bottom: 1rem; font-weight: bold; color: #1a237e; }
-    .plan p { font-size: 1rem; margin: 0.5rem 0; }
-    .plan .price { font-size: 1.8rem; font-weight: bold; color: #3f51b5; margin: 1rem 0; }
-    .pricing .plan button { background-color: #007acc; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 10px; cursor: pointer; font-size: 1rem; }
-    .pricing .plan button:hover { background-color: #005999; }
-    footer { background-color: #1a237e; color: #fff; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    nav {
+      background-color: #1a237e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav .menu {
+      display: flex;
+    }
+
+    nav .menu a {
+      display: block;
+    }
+
+    nav .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    header {
+      background-color: #3f51b5;
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .features,
+    .about,
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .feature,
+    .about-item,
+    .contact-item {
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    }
+
+    .feature i,
+    .about-item i,
+    .contact-item i {
+      font-size: 3rem;
+      color: #3f51b5;
+      margin-bottom: 1rem;
+    }
+
+    .feature h3,
+    .about-item h3,
+    .contact-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+    }
+
+    .pricing {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 4rem 2rem;
+      border-radius: 30px;
+    }
+
+    .pricing h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .plan {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border: 2px solid #3f51b5;
+    }
+
+    .plan h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #1a237e;
+    }
+
+    .plan p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .plan .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #3f51b5;
+      margin: 1rem 0;
+    }
+
+    .pricing .plan button {
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .pricing .plan button:hover {
+      background-color: #005999;
+    }
+
+    footer {
+      background-color: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
 
     @media (max-width: 768px) {
-      nav .menu { display: none; flex-direction: column; width: 100%; }
-      nav .menu a { margin: 1rem 0; }
-      nav .hamburger { display: block; }
+      nav .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav .menu a {
+        margin: 1rem 0;
+      }
+
+      nav .hamburger {
+        display: block;
+      }
     }
   </style>
+
+
 </head>
+
+
 <body>
   <nav>
     <div class="logo">ChatDoc</div>
@@ -50,8 +215,10 @@
       <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://auth.chatdoc.io/realms/ChatDoc/protocol/openid-connect/registrations?client_id=ChatDoc&redirect_uri=https%3A%2F%2Fapp.chatdoc.io%2F&response_mode=query&response_type=code&scope=openid&state=random-state&nonce=random-nonce">Register</a>
-      <a href="https://auth.chatdoc.io/realms/ChatDoc/protocol/openid-connect/auth?client_id=ChatDoc&redirect_uri=https%3A%2F%2Fapp.chatdoc.io&response_type=code&scope=openid">Login</a>
+      <a
+        href="https://auth.chatdoc.io/realms/ChatDoc/protocol/openid-connect/registrations?client_id=ChatDoc&redirect_uri=https%3A%2F%2Fapp.chatdoc.io%2F&response_mode=query&response_type=code&scope=openid&state=random-state&nonce=random-nonce">Register</a>
+      <a
+        href="https://auth.chatdoc.io/realms/ChatDoc/protocol/openid-connect/auth?client_id=ChatDoc&redirect_uri=https%3A%2F%2Fapp.chatdoc.io&response_type=code&scope=openid">Login</a>
     </div>
   </nav>
 
@@ -72,7 +239,8 @@
       <div class="feature">
         <i class="fas fa-lock"></i>
         <h3>Secure & Private</h3>
-        <p>Your data is processed securely with top-tier encryption mechanisms. Each customer data resides in a separate physical table.</p>
+        <p>Your data is processed securely with top-tier encryption mechanisms. Each customer data resides in a separate
+          physical table.</p>
       </div>
       <div class="feature">
         <i class="fas fa-bolt"></i>
@@ -88,25 +256,21 @@
       <div class="plan">
         <h3>$10 Credit</h3>
         <p class="price">$0/month</p>
-        <p>Basic document uploads</p>
-        <p>Limited chats per day</p>
-        <p>Community support</p>
+        <p>No Monthly Commitment</p>
         <button>Buy Now</button>
       </div>
       <div class="plan">
         <h3>Basic</h3>
         <p class="price">$10/month</p>
-        <p>Basic document uploads</p>
-        <p>Limited chats per day</p>
-        <p>Community support</p>
+        <p>10 GB document upload limit</p>
+        <p>Limited Chat</p>
         <button>Buy Now</button>
       </div>
       <div class="plan">
         <h3>Pro</h3>
         <p class="price">$25/month</p>
-        <p>Unlimited document uploads</p>
+        <p>25 GB file upload limit</p>
         <p>Unlimited chats</p>
-        <p>Priority support</p>
         <button>Buy Now</button>
       </div>
       <div class="plan">
@@ -115,6 +279,7 @@
         <p>Custom solutions</p>
         <p>Dedicated account manager</p>
         <p>Advanced security options</p>
+        <p>Unlimited file upload and chats</p>
         <button>Buy Now</button>
       </div>
     </div>
@@ -126,17 +291,25 @@
       <div class="about-item">
         <i class="fas fa-users"></i>
         <h3>Our Team</h3>
-        <p>We are a group of passionate individuals dedicated to making data interaction seamless and intuitive.</p>
+        <p>
+          We are a dedicated two-person team with many years of experience in the industry. 
+          Our expertise and commitment to excellence ensure we deliver high-quality solutions tailored to our customers needs. 
+          We take pride in our hands-on approach, attention to detail, and passion for helping businesses succeed.
+
+          Find our LinkedIn pages here:        </p>
       </div>
       <div class="about-item">
         <i class="fas fa-history"></i>
         <h3>Our History</h3>
-        <p>Founded in 2025, ChatDoc has been at the forefront of AI-driven data solutions.</p>
+        <p>Founded in 2025, ChatDoc has been a side project while we where working on a totally different project. This idea was so interested that we stopped all other onging
+            project and dedicated our time and energy to ChatDoc. We are excited to see where this journey will take us.
+        </p>
       </div>
       <div class="about-item">
         <i class="fas fa-bullseye"></i>
         <h3>Our Mission</h3>
-        <p>Our mission is to empower users to interact with their data effortlessly and securely.</p>
+        <p>Our mission is provide RAG solutions in a ways that you can access all your data from any sources. We are working on plugins to connect to different data sources such as 
+          OneNote, Gmail, Google Drive, Trello, Obsidian, etc. </p>
       </div>
     </div>
   </section>
@@ -150,14 +323,9 @@
         <p>Reach out to us at support@chatdoc.io for any inquiries or support.</p>
       </div>
       <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <h3>Call Us</h3>
-        <p>Give us a call at (123) 456-7890 for immediate assistance.</p>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Visit Us</h3>
-        <p>Come visit our office at 123 ChatDoc Lane, Data City, DC 12345.</p>
+        <i class="fa-solid fa-comments"></i>
+        <h3>Chat with Us</h3>
+        <p>Find the chat icon on the buttom of the page</p>
       </div>
     </div>
   </section>
@@ -168,6 +336,21 @@
     &copy; 2025 ChatDoc. All Rights Reserved.
   </footer>
 
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/679e97873a84273260789c7c/1ikrlr167';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+
   <script>
     function toggleMenu() {
       const menu = document.querySelector('nav .menu');
@@ -175,4 +358,5 @@
     }
   </script>
 </body>
+
 </html>
